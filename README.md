@@ -18,6 +18,9 @@ STEPS TO RUN
 2) in the cmd/terminal run the command "python runmefordatabasesetup.py"(change th database credentials accordingly in this file)
 3) then run the command "python ./server.py"
 
+DATABASE NAME = testdb
+TABLE NAMES = PINCODE, COMPUTE
+
 APIs MADE IN THIS PROJECT
 --------------------------
 /post_location - POST = this api takes values in format latitude+longitude+pincode+place+address and inserts the new pincode in 
