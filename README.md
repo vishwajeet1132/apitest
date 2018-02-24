@@ -15,7 +15,7 @@ DEPENDENCIES
 STEPS TO RUN
 ------------------------
 1) get your cmd/terminal to the "apitest" directory using cd
-2) in the cmd/terminal run the command "python runmefordatabasesetup.py"
+2) in the cmd/terminal run the command "python runmefordatabasesetup.py"(change th database credentials accordingly in this file)
 3) then run the command "python ./server.py"
 
 APIs MADE IN THIS PROJECT
