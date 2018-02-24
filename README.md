@@ -21,9 +21,9 @@ STEPS TO RUN
 APIs MADE IN THIS PROJECT
 --------------------------
 /post_location - POST = this api takes values in format latitude+longitude+pincode+place+address and inserts the new pincode in 
-                        database
+                        database.
                                     use curl command in terminal to mimic POST request
-                        for example
+                        for example:
                                              curl -H "Content-type:text/plain" -X POST http://127.0.0.1:5000/post_location 
                          --data-ascii 28.65+77.216+IN/12345+faridabad+haryana
                          
@@ -33,9 +33,9 @@ APIs MADE IN THIS PROJECT
             
 /get_using_postgres -GET = this api takes values in format latitude+longitude+radius and returns the name of places which are in 
                            the specified radius of the give latitude and longitude. this api is implemented using the earthdistance 
-                           extension of postgres SQL
+                           extension of postgres SQL.
                                      use curl command in terminal to mimic GET request
-                           for example
+                           for example:
                                          curl -H "Content-type:text/plain" -X GET http://127.0.0.1:5000/get_using_postgres --data-ascii  
                            28.65+77.216+radius(in meteres)
                            
@@ -46,9 +46,9 @@ APIs MADE IN THIS PROJECT
                                   
 /get_using_self -GET = this api takes values in format latitude+longitude+radius and returns the name of places which are in 
                        the specified radius of the give latitude and longitude. this api is implemented by doing mathematical  
-                       computations
+                       computations.
                                  use curl command in terminal to mimic GET request
-                       for example
+                       for example:
                                          curl -H "Content-type:text/plain" -X GET http://127.0.0.1:5000/get_using_self --data-ascii  
                        28.65+77.216+radius(in meteres)
                        
@@ -57,8 +57,8 @@ APIs MADE IN THIS PROJECT
                        
                        
                        
-/get_city_name -GET = this api takes value in  the form of latitude+longitude and returns the name of place where the location belongs                       to
+/get_city_name -GET = this api takes value in  the form of latitude+longitude and returns the name of place where the location belongs                       to.
                                use curl command in terminal to mimic GET request
-                      for example
+                      for example:
                                          curl -H "Content-type:text/plain" -X GET http://127.0.0.1:5000/get_city_name --data-ascii  
                       28.65+77.216
