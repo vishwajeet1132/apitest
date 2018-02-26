@@ -11,6 +11,7 @@ DEPENDENCIES
 8 shapely
 9 postgres SQL 10
 10 curl
+11 requests
 
 STEPS TO RUN
 ------------------------
