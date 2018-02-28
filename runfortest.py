@@ -2,7 +2,7 @@ import requests
 
 def post():
     url = 'http://127.0.0.1:5000/post_location'
-    data=["56.88+63.75+IN/45645+vijay nagar+banglore","28.6333+77.2167+IN/110001+Cannught place+New Delhi"]
+    data=["56.88+63.75+IN/45645+vijay nagar+banglore","28.6333+77.2167+IN/11001+Cannught place+New Delhi"]
     headers = {'Content-type': 'text/plain'}
     for i in data:
         response = requests.post(url, data=i,headers=headers)
