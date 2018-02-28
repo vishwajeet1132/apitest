@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/post_location', methods=['POST'])
 def post_location():
     if request.headers['Content-Type'] == 'text/plain':
-        text=str(request.data).replace("b'",'')
+        text=request.data.decode("utf-8")
         lat,long,pin,place,ad=text.split("+")
         cur=myConnection.cursor()
         cur.execute("select key from pincode where key= {0} ".format("\'"+pin+"\'"))
@@ -31,7 +31,7 @@ def post_location():
 @app.route('/get_using_postgres', methods=['GET','POST'])
 def get_using_postgres():
     if request.headers['Content-Type'] == 'text/plain':
-        text=str(request.data).replace("\'",'').replace("b",'')
+        text=request.data.decode("utf-8")
         lat,long,radius=text.split("+")
         cur=myConnection.cursor()
         query="select place_name from pincode where earth_box(ll_to_earth("+lat+","+long+"), "+radius+") @> ll_to_earth(pincode.latitude, pincode.longitude)"
@@ -49,7 +49,8 @@ def get_using_self():
         query="select place_name,latitude,longitude from pincode"
         cur=myConnection.cursor()
         cur.execute(query)
-        text=str(request.data).replace("\'",'').replace("b",'')
+        da=request.data
+        text = request.data.decode("utf-8")
         lat,long,dis=text.split("+")
         lst=[]
         for a,b,c in cur.fetchall():
@@ -76,7 +77,7 @@ def get_using_self():
 @app.route('/get_city_name', methods=['GET','POST'])
 def get_city_name():
     if request.headers['Content-Type'] == 'text/plain':
-        text=str(request.data).replace("\'",'').replace("b",'')
+        text = request.data.decode("utf-8")
         lat,long=text.split("+")
         cur=myConnection.cursor()
         query="select name,parent,coordinates from compute"
