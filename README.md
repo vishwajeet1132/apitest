@@ -2,15 +2,25 @@
 DEPENDENCIES
 -----------------------
 1 python 3.5
+
 2 numpy
+
 3 pandas
+
 4 sqlalchemy
+
 5 flask
+
 6 math
+
 7 psycopg2
+
 8 shapely
+
 9 postgres SQL 10
+
 10 curl
+
 11 requests
 
 STEPS TO RUN
